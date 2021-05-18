@@ -1,0 +1,118 @@
+@media (max-width: 1199px) {
+    html{
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 991px) {
+    html{
+        font-size: 16px;
+    }
+    .banner-caption-ts h2 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+    .anx-mob-bg {
+        border-radius: 0 !important;
+    }
+    .banner-caption-ts h2.annex-yellow-heading {
+        font-size: 28px;
+        line-height: 28px;
+    }
+    .banner-caption-ts p {
+        font-size: 17px;
+        line-height: 51px;
+        color: rgba($color: #fff, $alpha: .8);
+    }
+    .trading-pr-heading {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    .banner-caption-ts {
+        padding: 70px 20px 20px 20px;
+    }
+    .container_header {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .Annex-28-text {
+        font-size: 20px;
+    }
+    .for-mob {
+        display: block;
+    }
+    .Annex-sec-heading {
+        font-size: 28px;
+    }
+    .curency-crd-main {
+        padding: 10px 20px;
+        margin: 5px 0;
+    }
+    .proto-img {
+        padding: 0;
+        margin-top: -15px;
+    }
+    .frontside .card {
+        margin: 10px 25px;
+    }
+    .ts-btn-gr,
+    .bg-dr-blue-btn {
+        font-size: 16px;
+        padding: 8px 12px;
+        min-width: 150px;
+    }
+    .market-ul-inner {
+        flex-direction: column;
+    }
+    .market-ul-inner li {
+        margin: 10px 0;
+    }
+    .footer-nav {
+        float: left;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .annex-social {
+        justify-content: center;
+        margin: 10px 0;
+    }
+    .footer-text-area p {
+        flex-wrap: wrap;
+    }
+    #about,
+    .features {
+        padding: 30px 0 30px 0;
+    }
+    .right-content {
+        margin-top: 30px;
+    }
+    .taswit-heading-one {
+        font-size: 30px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .footer-nav li {
+        border-bottom: 0 !important;
+    }
+    .footer-logo img {
+        max-width: 180px !important;
+    }
+    .curcy-name{
+        font-size: 19px;
+        white-space: nowrap;
+    }
+    .curcy-name-rt{
+        white-space: nowrap;
+    }
+    .currency-p.curcy-name-rt2{
+        font-size: 21px;
+        white-space: nowrap;
+    }
+    .curcy-percent{
+        font-size: 12px;
+        white-space: nowrap;
+    }
+}
+

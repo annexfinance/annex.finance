@@ -1,0 +1,60 @@
+<svg width="96" height="124" viewBox="0 0 96 124" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="53.5" y1="50.5" x2="90.5" y2="50.5" stroke="url(#paint0_radial)" stroke-width="11" stroke-linecap="round"/>
+<g filter="url(#filter0_bii)">
+<path d="M39.7841 21.4757C42.428 18.9619 46.5726 18.9433 49.239 21.4332L51.5886 23.6272C56.9538 28.6372 64.9637 29.5505 71.319 25.8769C75.0255 23.7345 79.661 26.4092 79.661 30.6903V72.6262C79.661 80.746 75.5554 88.3152 68.7492 92.7433L57.5797 100.01C49.6222 105.187 39.3608 105.187 31.4033 100.01L20.2338 92.7433C13.4276 88.3152 9.32202 80.746 9.32202 72.6262L9.32203 30.7445C9.32203 26.4232 13.9871 23.7113 17.7422 25.8496C24.2188 29.5375 32.3467 28.547 37.748 23.4116L39.7841 21.4757Z" fill="white" fill-opacity="0.03"/>
+</g>
+<g filter="url(#filter1_bi)">
+<rect y="47.5084" width="19.4915" height="11.8644" rx="5.9322" fill="white" fill-opacity="0.1"/>
+</g>
+<g filter="url(#filter2_bi)">
+<rect x="0.847412" y="66.1526" width="50.8475" height="11.8644" rx="5.9322" fill="white" fill-opacity="0.1"/>
+</g>
+<defs>
+<filter id="filter0_bii" x="-76.678" y="-66.422" width="242.339" height="256.315" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImage" stdDeviation="43"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.15 0"/>
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="34"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0"/>
+<feBlend mode="normal" in2="effect2_innerShadow" result="effect3_innerShadow"/>
+</filter>
+<filter id="filter1_bi" x="-88" y="-40.4916" width="195.492" height="187.864" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImage" stdDeviation="44"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="1"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.3 0"/>
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow"/>
+</filter>
+<filter id="filter2_bi" x="-87.1526" y="-21.8474" width="226.847" height="187.864" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImage" stdDeviation="44"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="1"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.3 0"/>
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow"/>
+</filter>
+<radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(45.3158 56.8889) scale(47.8421 11.3719)">
+<stop stop-color="#FF9D2D"/>
+<stop offset="1" stop-color="#8F3F88"/>
+</radialGradient>
+</defs>
+</svg>

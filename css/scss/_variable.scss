@@ -1,0 +1,24 @@
+$body: #2b2044;
+$gradient: radial-gradient(99.67% 1137.19% at -5.59% 88.89%, #FF9D2D 0%, #8F3F88 100%);
+
+$radius: 34px;
+
+/**
+ * Convert font-size from px to rem with px fallback
+ *
+ * @param $size - the value in pixel you want to convert
+ *
+ * e.g. p {@include fontSize(12px);}
+ * 
+ */
+
+// Function for converting a px based font-size to rem.
+@function rem($size) {
+  @return $size / 16px * 1rem;
+}
+
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: rem($size);
+}
