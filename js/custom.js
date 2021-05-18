@@ -91,7 +91,7 @@ function getSavingRow(row, annAPY) {
     <div class="col-12 col-md-6 col-xl-4">
         <div class="curency-crd-main" id="saving-${row?.underlyingSymbol?.toLowerCase()}">
             <div class="curecy-crd-img-main">
-                <img src="images/tokens/${row?.underlyingSymbol?.toUpperCase()}.${row?.underlyingSymbol?.toUpperCase() === "DOGE" ? "svg" : "png"}" alt="${row?.underlyingSymbol}" style="width: 70px; height: 70px" />
+                <img src="images/tokens/${row?.underlyingSymbol?.toUpperCase()}.png" alt="${row?.underlyingSymbol}" style="width: 70px; height: 70px" />
             </div>
             <div class="d-flex align-items-stretch align-items-lg-center flex-column flex-lg-row justify-content-between flex-grow-1">
               <div class="curecy-crd-token-info mb-2 mb-lg-0">
@@ -116,7 +116,7 @@ function getBorrowRow(row) {
     <div class="col-12 col-md-6 col-xl-4">
         <div class="curency-crd-main" id="borrow-${row?.underlyingSymbol?.toLowerCase()}">
             <div class="curecy-crd-img-main">
-                <img src="images/tokens/${row?.underlyingSymbol?.toUpperCase()}.${row?.underlyingSymbol?.toUpperCase() === "DOGE" ? "svg" : "png"}" alt="${row?.underlyingSymbol}" style="width: 70px; height: 70px" />
+                <img src="images/tokens/${row?.underlyingSymbol?.toUpperCase()}.png" alt="${row?.underlyingSymbol}" style="width: 70px; height: 70px" />
             </div>
             
             <div class="d-flex align-items-stretch align-items-lg-center flex-column flex-lg-row justify-content-between flex-grow-1">
