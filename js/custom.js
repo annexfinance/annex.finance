@@ -1,4 +1,4 @@
-const apiBaseURL = "https://api.venus.io/api";
+const apiBaseURL = "http://back.annex.agencywolfe.com/api";
 
 $(document).ready(function () {
   $(window).scroll(function () {
@@ -93,14 +93,14 @@ function getSavingRow(row, annAPY) {
             <div class="curecy-crd-img-main">
                 <img src="images/tokens/${row?.underlyingSymbol?.toUpperCase()}.png" alt="${row?.underlyingSymbol}" style="width: 70px; height: 70px" />
             </div>
-            <div class="d-flex align-items-stretch align-items-lg-center flex-column flex-lg-row justify-content-between flex-grow-1">
-              <div class="curecy-crd-token-info mb-2 mb-lg-0">
-                  <p class="curcy-name text-left mb-1 mg-sm-2">${row?.underlyingName}</p>
+            <div class="d-flex align-items-center flex-row justify-content-between flex-grow-1 flex-wrap">
+              <div class="curecy-crd-token-info mb-0 flex-grow-1 flex-wrap text-wrap">
+                  <p class="curcy-name text-left mb-1 mg-sm-2">${row?.underlyingName?.replace('Token', "")}</p>
                   <p class="currency-p curcy-abbr text-left mb-0">${row?.underlyingSymbol}</p>
               </div>
   
-              <div class="currecy-crd-value text-lg-right text-left">
-                  <p class="curcy-percent2">${annAPY ? `%${Number(row?.supplyVenusApy)?.toFixed(2)}` : `%${Number(row?.supplyApy)?.toFixed(2)}`}</p>
+              <div class="currecy-crd-value text-md-right text-left">
+                  <p class="curcy-percent2">${annAPY ? `%${Number(row?.supplyAnnexApy)?.toFixed(2)}` : `%${Number(row?.supplyApy)?.toFixed(2)}`}</p>
                   <p class="currency-p curcy-name-rt2">APY</p>
               </div>
             </div>
@@ -122,7 +122,7 @@ function getBorrowRow(row) {
             <div class="d-flex align-items-stretch align-items-lg-center flex-column flex-lg-row justify-content-between flex-grow-1">
               <div class="curecy-crd-img-main">
                   <div class="curecy-crd-token-info mb-2 mb-lg-0">
-                      <p class="curcy-name text-left">${row?.underlyingName}</p>
+                      <p class="curcy-name text-left">${row?.underlyingName?.replace('Token', "")}</p>
                       <p class="currency-p curcy-abbr text-left mb-0">${row?.underlyingSymbol}</p>
                   </div>
               </div>
@@ -152,52 +152,38 @@ function getMarketTokenOption(row) {
 }
 
 const defaultCoins = {
-  BTCB: {
-    underlyingSymbol: "BTCB",
-    underlyingName: "BTCB",
-    supplyVenusApy: 0,
-    supplyApy: 0,
-    liquidity: 0,
-  },
-  LTC: {
-    underlyingSymbol: "LTC",
-    underlyingName: "LiteCoin",
-    supplyVenusApy: 0,
-    supplyApy: 0,
-    liquidity: 0,
-  },
-  ETH: {
-    underlyingSymbol: "ETH",
-    underlyingName: "Ethereum",
-    supplyVenusApy: 0,
-    supplyApy: 0,
-    liquidity: 0,
-  },
-  XRP: {
-    underlyingSymbol: "XRP",
-    underlyingName: "Ripple",
-    supplyVenusApy: 0,
-    supplyApy: 0,
-    liquidity: 0,
-  },
   USDC: {
     underlyingSymbol: "USDC",
     underlyingName: "USD Coin",
-    supplyVenusApy: 0,
+    supplyAnnexApy: 0,
     supplyApy: 0,
     liquidity: 0,
   },
-  XVS: {
-    underlyingSymbol: "XVS",
-    underlyingName: "Venus",
-    supplyVenusApy: 0,
+  USDT: {
+    underlyingSymbol: "USDT",
+    underlyingName: "USDT",
+    supplyAnnexApy: 0,
     supplyApy: 0,
     liquidity: 0,
   },
-  SXP: {
-    underlyingSymbol: "SXP",
-    underlyingName: "Swipe",
-    supplyVenusApy: 0,
+  BUSD: {
+    underlyingSymbol: "BUSD",
+    underlyingName: "BUSD",
+    supplyAnnexApy: 0,
+    supplyApy: 0,
+    liquidity: 0,
+  },
+  ANN: {
+    underlyingSymbol: "ANN",
+    underlyingName: "Annex",
+    supplyAnnexApy: 0,
+    supplyApy: 0,
+    liquidity: 0,
+  },
+  BNB: {
+    underlyingSymbol: "BNB",
+    underlyingName: "BNB",
+    supplyAnnexApy: 0,
     supplyApy: 0,
     liquidity: 0,
   },
@@ -205,12 +191,16 @@ const defaultCoins = {
 
 const defaultCoinKeys = Object.keys(defaultCoins);
 
+function getBscScanUrl(address) {
+  return `https://bscscan.com/token/${address}`
+}
+
 // get data from API
 $(function() {
   let viewMoreSaving = false;
   let viewMoreBorrow = false;
   let savingWithANN = false;
-  let defaultMarketSelected = "SXP"
+  let defaultMarketSelected = "USDC"
   let markets = []
 
   const savingViewMoreButton = $("#saving-view-more");
@@ -240,8 +230,7 @@ $(function() {
     for(let i in defaultCoins) {
       let row = defaultCoins[i];
 
-
-      if(i == defaultCoinKeys.length - 1) {
+      if(defaultCoins.length % 3 === 1 && i === defaultCoinKeys[defaultCoinKeys.length - 1]) {
         rows.push(getStringTheory(true));
 
         rows.push(type === 'saving' ? getSavingRow(row, savingWithANN) : getBorrowRow(row));
@@ -259,7 +248,12 @@ $(function() {
 
   function updateSaving(markets) {
     let rows = [];
-    let canInsertStringTheory = !viewMoreSaving || markets.length % 3 === 1;
+    let canInsertStringTheory = (!viewMoreSaving && markets.length >= 7) || markets.length % 3 === 1;
+
+    if(markets.length <= 7) {
+      savingViewMoreButton.css("display", "none");
+    }
+
 
     for(let i in markets) {
       let row = markets[i];
@@ -277,7 +271,12 @@ $(function() {
 
   function updateBorrowing(markets) {
     let rows = [];
-    let canInsertStringTheory = !viewMoreBorrow || markets.length % 3 === 1;
+    let canInsertStringTheory = (!viewMoreBorrow && markets.length >= 7) || markets.length % 3 === 1;
+
+
+    if(markets.length <= 7) {
+      borrowViewMoreButton.css("display", "none");
+    }
 
     for(let i in markets) {
       let row = markets[i];
@@ -312,11 +311,13 @@ $(function() {
     marketTotalBorrowed.html(liquidityFormatter.format(selectedMarket?.totalBorrowsUsd));
     marketBorrowers.html(selectedMarket?.borrowerCount);
     marketTokenAddress.html(selectedMarket?.address?.slice(0, 6) + "..." + selectedMarket?.address?.slice(-4));
+    marketTokenAddress.attr('href', getBscScanUrl(selectedMarket?.address))
+    marketTokenAddress.attr('target', "_blank")
 
   }
 
   const request = $.ajax({
-    url: `${apiBaseURL}/governance/venus`
+    url: `${apiBaseURL}/v1/governance/annex`
   })
 
   initialRows('saving');
