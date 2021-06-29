@@ -2,6 +2,20 @@
     html{
         font-size: 14px;
     }
+
+    @media (min-width: 768px) {
+        .market-ul-inner{
+            display: flex !important;
+            flex-wrap: wrap !important;
+            flex-direction: row !important;
+            .pb-sm-4{
+                width: 50% !important;
+                &:last-child{
+                    width: 100% !important;
+                }
+            }
+        }
+    }
 }
 
 

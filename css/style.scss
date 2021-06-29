@@ -271,6 +271,7 @@ body {
 .Annex-sec-heading-side {
   font-size: rem(36px);
   color: #fff;
+  // opacity: .7;
   font-weight: 400;
 }
 
@@ -312,13 +313,14 @@ about
   font-size: rem(26px);
   color: #ffffff;
   font-weight: 400;
-  margin-bottom: 33px;
+  @media (min-width: 768px) {
+    margin-bottom: 33px !important;
+  }
 }
 
 .mini-yellow-heading {
   font-size: rem(18px);
   margin-bottom: 0;
-  text-transform: uppercase;
   padding-bottom: 15px;
 }
 
@@ -958,6 +960,11 @@ border: 0;
 }
 .protocol-outer {
   overflow: hidden;
+  .btn{
+    margin-top: 44px;
+    min-width: 240px;
+    padding: 0.7rem 2.9375rem;
+  }
 }
 .saving-outer {
   overflow: hidden;
@@ -1028,7 +1035,7 @@ border: 0;
   line-height: 2;
   color: rgba($color: #fff, $alpha: .8);
 }
-.annex-inner-text .profitable-p {
+.annex-inner-text.profitable-p {
   font-size: rem(18px);
 }
 .all-time-outer {

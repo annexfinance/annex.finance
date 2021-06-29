@@ -10587,20 +10587,13 @@ button:focus {
 }
 
 .container {
-  padding-right: 24px;
-  padding-left: 24px;
+  padding-right: 36px;
+  padding-left: 36px;
 }
 
 @media (min-width: 1280px) {
   .container {
     max-width: 1272px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    padding-right: 36px;
-    padding-left: 36px;
   }
 }
 
@@ -10831,13 +10824,17 @@ about
   font-size: 1.625rem;
   color: #ffffff;
   font-weight: 400;
-  margin-bottom: 33px;
+}
+
+@media (min-width: 768px) {
+  .nu-heading-title {
+    margin-bottom: 33px !important;
+  }
 }
 
 .mini-yellow-heading {
   font-size: 1.125rem;
   margin-bottom: 0;
-  text-transform: uppercase;
   padding-bottom: 15px;
 }
 
@@ -10956,14 +10953,12 @@ about
 }
 
 .curcy-percent {
-  color: #ff9d2d;
   font-size: 0.875rem;
   font-weight: 400;
   margin-top: 5px;
 }
 
 .curcy-percent2 {
-  color: #ff9d2d;
   font-size: 1.375rem;
   font-weight: 500;
   margin-top: 5px;
@@ -11314,15 +11309,6 @@ about
   color: #ffffff;
 }
 
-#market-selected-token {
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-#market-selected-token:hover {
-  color: #FF9D2D;
-}
-
 /*Feature Section ends */
 .sub-main {
   padding: 50px 0;
@@ -11521,6 +11507,12 @@ about
   overflow: hidden;
 }
 
+.protocol-outer .btn {
+  margin-top: 44px;
+  min-width: 240px;
+  padding: 0.7rem 2.9375rem;
+}
+
 .saving-outer {
   overflow: hidden;
   padding-top: 187px !important;
@@ -11605,7 +11597,7 @@ about
   color: rgba(255, 255, 255, 0.8);
 }
 
-.annex-inner-text .profitable-p {
+.annex-inner-text.profitable-p {
   font-size: 1.125rem;
 }
 
@@ -11693,6 +11685,26 @@ about
   }
 }
 
+@media (max-width: 1199px) and (min-width: 768px) {
+  .market-ul-inner {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+  }
+  .market-ul-inner .pb-sm-4 {
+    width: 50% !important;
+  }
+  .market-ul-inner .pb-sm-4:last-child {
+    width: 100% !important;
+  }
+}
+
 @media (max-width: 991px) {
   html {
     font-size: 16px;
@@ -11734,10 +11746,8 @@ about
     font-size: 28px;
   }
   .curency-crd-main {
-    padding: 20px;
+    padding: 10px 20px;
     margin: 5px 0;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
   }
   .proto-img {
     padding: 0;
@@ -11888,7 +11898,7 @@ about
     max-WIDTH: calc(100% + 30px);
   }
   .frontside .card {
-    margin: 10px 15px 15px;
+    margin: 10px 25px;
   }
   .ts-btn-gr,
   .bg-dr-blue-btn {
@@ -11959,29 +11969,6 @@ about
   }
 }
 
-@media (max-width: 575px) {
-  .curcy-name {
-    font-size: 20px;
-  }
-  .currency-p.curcy-name-rt2 {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-  }
-  .curcy-percent {
-    font-size: 14px;
-  }
-  .curcy-percent2 {
-    font-size: 16px;
-  }
-  .curcy-percent-2 {
-    font-size: 16px;
-  }
-  .currency-p {
-    font-size: 1rem !important;
-  }
-
-}
-
 .banner-outer .btn-outline-gradient {
   background: -webkit-gradient(linear, left top, left bottom, from(#3d313c), to(#3d313c)) padding-box, radial-gradient(99.67% 1137.19% at -5.59% 88.89%, #ff9d2d 0%, rgba(255, 255, 255, 0.13) 34.07%, rgba(255, 255, 255, 0) 55.73%, rgba(255, 255, 255, 0.13) 76.44%, #8f3f88 100%) border-box;
   background: linear-gradient(#3d313c, #3d313c) padding-box, radial-gradient(99.67% 1137.19% at -5.59% 88.89%, #ff9d2d 0%, rgba(255, 255, 255, 0.13) 34.07%, rgba(255, 255, 255, 0) 55.73%, rgba(255, 255, 255, 0.13) 76.44%, #8f3f88 100%) border-box;
@@ -11999,30 +11986,33 @@ section {
 .nice-select .list {
   max-height: 300px !important;
   overflow: auto !important;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
 }
-/* width */
-.nice-select .list::-webkit-scrollbar {
+
+.nice-select .list ::-webkit-scrollbar {
   width: 1px;
   background: transparent;
 }
 
-/* Track */
-.nice-select .list::-webkit-scrollbar-track {
-  box-shadow: none;
+.nice-select .list ::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+          box-shadow: none;
   background-color: transparent;
   border-radius: 10px;
   padding: 0 6px;
   margin: 0 6px;
 }
 
-/* Handle */
-.nice-select .list::-webkit-scrollbar-thumb {
+.nice-select .list ::-webkit-scrollbar-thumb {
   background: transparent;
   border-radius: 10px;
   width: 4px !important;
 }
 
-/* Handle on hover */
-.nice-select .list::-webkit-scrollbar-thumb:hover {
+.nice-select .list ::-webkit-scrollbar-thumb:hover {
   background: transparent;
 }
+/*# sourceMappingURL=style.css.map */
