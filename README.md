@@ -7,4 +7,4 @@ Annex Finance Landing page
 
 
 ## installation
-Install Nginx
+Install docs

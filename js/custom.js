@@ -1,4 +1,4 @@
-const apiBaseURL = "https://testapi.annex.finance/api";
+const apiBaseURL = "http://back.annex.agencywolfe.com/api";
 
 $(document).ready(function () {
   $(window).scroll(function () {
@@ -359,3 +359,26 @@ $(function() {
     })
   })
 })
+
+
+  let certikContainer = $('.certik-container'),
+    $window = $(window),
+    $footer = $('footer');
+
+  if (certikContainer.length) {
+    function resolveVisibility() {
+      if (certikContainer.offset().top + certikContainer.height() > $footer.position().top) {
+        certikContainer.removeClass('visible');
+      } else {
+        certikContainer.addClass('visible');
+      }
+    };
+  }
+
+  $window.on('resize', function () {
+    resolveVisibility();
+  });
+  $window.on('scroll', function () {
+    resolveVisibility();
+  });
+  resolveVisibility();

@@ -1174,3 +1174,90 @@ section{
     background: transparent;
   }
 }
+
+
+
+
+
+.certik-container {
+	position: fixed;
+	display: flex;
+	height: 50px;
+	bottom: 25px;
+	right: 40px;
+	background: linear-gradient(#3d313c, #3d313c) padding-box, radial-gradient(99.67% 1137.19% at -5.59% 88.89%, #ff9d2d 0%, rgba(255, 255, 255, 0.13) 34.07%, rgba(255, 255, 255, 0) 55.73%, rgba(255, 255, 255, 0.13) 76.44%, #8f3f88 100%) border-box;
+  border: solid 3px transparent;
+	border-radius: 16px;
+	align-items: center;
+	padding: 13px 25px;
+	z-index: 10;
+	opacity: 0;
+	transition: opacity .3s ease;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	pointer-events: none
+}
+
+
+.certik-container.visible {
+	opacity: 1;
+	pointer-events: auto
+}
+
+.certik-container.large>.pending {
+	position: absolute;
+	left: -15px;
+	top: -15px
+}
+
+.certik-container.large>.txt {
+	margin: 0 10px 0 15px;
+	color: #5C6D78;
+	font-size: 14px;
+	white-space: nowrap
+}
+
+.certik-container.large>.logo {
+	width: 100px;
+	margin-right: 10px
+}
+
+.certik-container.large>.check {
+	height: 8px
+}
+
+.certik-container.large>.skynet {
+	width: 20px;
+	height: 20px
+}
+
+.certik-container.large>.pulsing-circle {
+	position: relative;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #ffad4f;
+}
+
+.certik-container.large>.pulsing-circle::before {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #ffad4f;
+	animation: pulsing-circle 1s ease infinite;
+	left: 0;
+	top: 0
+}
+
+@keyframes pulsing-circle {
+	0% {
+		transform: scale(1);
+		opacity: 1
+	}
+	100% {
+		transform: scale(2.5);
+		opacity: 0
+	}
+}
