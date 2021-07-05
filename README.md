@@ -6,5 +6,5 @@ Annex Finance Landing page
 [Click Here](https://annex.finance) to view Landing Page
 
 
-## installation
+## Installation
 Install docs
