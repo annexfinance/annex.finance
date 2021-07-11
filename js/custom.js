@@ -1,4 +1,4 @@
-const apiBaseURL = "http://testapi.annex.finance/api";
+const apiBaseURL = "https://testapi.annex.finance/api";
 
 $(document).ready(function () {
   $(window).scroll(function () {
