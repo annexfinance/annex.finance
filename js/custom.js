@@ -199,7 +199,7 @@ function getBscScanUrl(address) {
 $(function() {
   let viewMoreSaving = false;
   let viewMoreBorrow = false;
-  let savingWithANN = false;
+  let savingWithANN = true;
   let defaultMarketSelected = "USDC"
   let markets = []
 
