@@ -249,7 +249,7 @@ body {
   padding: 20px 0;
   margin-top: 20px;
   border-radius: 10px;
-  transition: all.5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .trading-box img {
@@ -344,7 +344,7 @@ about
 
 .view-more-btn-mr {
   font-size: rem(24px);
-  transition: all.5s ease-in-out;
+  transition: all .5s ease-in-out;
   &::after {
     content: "";
     padding: 13px;
@@ -357,7 +357,7 @@ about
 }
 
 .view-more-btn-mr:hover {
-  transition: all.5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .Annex-about-coin {
@@ -438,12 +438,14 @@ about
   font-size: rem(14px);
   font-weight: 400;
   margin-top: 5px;
+  color: #ff9d2d;
 }
 
 .curcy-percent2 {
   font-size: rem(22px);
   font-weight: 500;
   margin-top: 5px;
+  color: #ff9d2d;
 }
 
 .curcy-percent-2 {
