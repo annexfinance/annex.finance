@@ -195,13 +195,13 @@ const defaultCoins = {
     supplyApy: 0,
     liquidity: 0,
   },
-  ANN: {
-    underlyingSymbol: "ANN",
-    underlyingName: "Annex",
-    supplyAnnexApy: 0,
-    supplyApy: 0,
-    liquidity: 0,
-  },
+  // ANN: {
+  //   underlyingSymbol: "ANN",
+  //   underlyingName: "Annex",
+  //   supplyAnnexApy: 0,
+  //   supplyApy: 0,
+  //   liquidity: 0,
+  // },
   BNB: {
     underlyingSymbol: "BNB",
     underlyingName: "BNB",
