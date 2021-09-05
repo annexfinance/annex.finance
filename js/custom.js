@@ -245,6 +245,16 @@ $(function() {
     container.append(...rows);
   }
 
+  function updateTVL(markets) {
+    let TVL = 0;
+    markets.forEach(market => {
+      console.log(market)
+      TVL += Number(market.totalSupplyUsd);
+    });
+    console.log(TVL)
+    const tvl = $('.annex-platform-tvl');
+    tvl.html(new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(TVL));
+  }
 
   function updateSaving(markets) {
     let rows = [];
@@ -326,6 +336,7 @@ $(function() {
   request.done(function (response) {
     markets = response?.data?.markets;
 
+    updateTVL(markets);
     updateSaving(markets);
 
     updateBorrowing(markets);
