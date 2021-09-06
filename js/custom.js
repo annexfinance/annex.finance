@@ -280,13 +280,18 @@ $(function () {
 
   function updateTVL(markets) {
     let TVL = 0;
-    markets.forEach(market => {
-      console.log(market)
+    markets.forEach((market) => {
+      console.log(market);
       TVL += Number(market.totalSupplyUsd);
     });
-    console.log(TVL)
-    const tvl = $('.annex-platform-tvl');
-    tvl.html(new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(TVL));
+    console.log(TVL);
+    const tvl = $(".annex-platform-tvl");
+    tvl.html(
+      `Total Value Locked - ${new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(TVL)}`
+    );
   }
 
   function updateSaving(markets) {
