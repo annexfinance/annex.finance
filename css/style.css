@@ -447,6 +447,8 @@ h2 {
 .h3,
 h3 {
   font-size: 2rem;
+  color: rgb(255, 152, 0);
+  font-weight: bold;
 }
 
 .h4,
