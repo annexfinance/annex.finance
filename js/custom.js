@@ -286,7 +286,12 @@ $(function () {
     });
     console.log(TVL);
     const tvl = $(".annex-platform-tvl");
-    $(".annex-platform-tvl").html(`Total }`);
+    tvl.html(
+      `Total Value Locked - ${new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(TVL)}`
+    );
   }
 
   function updateSaving(markets) {
