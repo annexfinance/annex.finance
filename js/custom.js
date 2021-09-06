@@ -287,7 +287,7 @@ $(function () {
     console.log(TVL);
     const tvl = $(".annex-platform-tvl");
     tvl.html(
-      `TVL ${new Intl.NumberFormat("en-US", {
+      `TVL - ${new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
       }).format(TVL)}`
