@@ -286,12 +286,7 @@ $(function () {
     });
     console.log(TVL);
     const tvl = $(".annex-platform-tvl");
-    tvl.html(
-      `Total Value Locked - ${new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(TVL)}`
-    );
+    $(".annex-platform-tvl").html(`Total }`);
   }
 
   function updateSaving(markets) {
