@@ -446,9 +446,7 @@ h2 {
 
 .h3,
 h3 {
-  font-size: 2rem;
-  color: rgb(255, 152, 0);
-  font-weight: bold;
+  font-size: 1.75rem;
 }
 
 .h4,
@@ -11789,7 +11787,7 @@ a:hover {
   align-items: center;
 }
 .nav-bar .nav-bar-nav li {
-  padding: 12px 20px;
+  padding: 12px 15px;
 }
 @media (min-width: 1200px) {
   .nav-bar .nav-bar-nav li:last-child {
@@ -11838,9 +11836,9 @@ button.toggle-nav {
 
 .nav-btn {
   background: #fff;
-  padding: 17px 25px;
+  padding: 15px 20px;
   color: #2a304b !important;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 .naurillon-brand img {
