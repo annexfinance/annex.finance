@@ -281,7 +281,6 @@ $(function () {
   function updateTVL(markets) {
     let TVL = 0;
     markets.forEach((market) => {
-      console.log(market);
       TVL += Number(market.totalSupplyUsd);
     });
     console.log(TVL);
@@ -290,7 +289,7 @@ $(function () {
       `TVL ${new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
-      }).format(TVL)}`
+      }).format(TVL / 1000000)}M`
     );
   }
 
