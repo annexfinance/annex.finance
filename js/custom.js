@@ -209,6 +209,20 @@ const defaultCoins = {
     supplyApy: 0,
     liquidity: 0,
   },
+  ETH: {
+    underlyingSymbol: "ETH",
+    underlyingName: "ETH",
+    supplyAnnexApy: 0,
+    supplyApy: 0,
+    liquidity: 0,
+  },
+  BTCB: {
+    underlyingSymbol: "BTCB",
+    underlyingName: "BTCB",
+    supplyAnnexApy: 0,
+    supplyApy: 0,
+    liquidity: 0,
+  },
 };
 
 const defaultCoinKeys = Object.keys(defaultCoins);
@@ -283,13 +297,19 @@ $(function () {
     markets.forEach((market) => {
       TVL += Number(market.totalSupplyUsd);
     });
-    console.log(TVL);
+    const tvlHeader = $(".annex-platform-tvl-header");
     const tvl = $(".annex-platform-tvl");
-    tvl.html(
+    tvlHeader.html(
       `TVL ${new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
       }).format(TVL / 1000000)}M`
+    );
+    tvl.html(
+      `TVL ${new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(TVL)}`
     );
   }
 
