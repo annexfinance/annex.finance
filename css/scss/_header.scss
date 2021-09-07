@@ -14,7 +14,7 @@
   }
   @media (max-width: 1199px) {
     .nav-bar-nav {
-			padding-left: 0;
+      padding-left: 0;
       transform: translateY(calc(-100% - 80px));
       position: absolute;
       top: 0;
@@ -47,7 +47,7 @@
     list-style: none;
     align-items: center;
     li {
-      padding: 12px 20px;
+      padding: 12px 15px;
       @media (min-width: 1200px) {
         &:last-child {
           padding-right: 0;
