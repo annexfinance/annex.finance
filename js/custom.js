@@ -292,18 +292,19 @@ $(function () {
     container.append(...rows);
   }
 
-  function updateTVL(markets) {
+  function updateTVL(markets,farmTVL) {
     let TVL = 0;
     markets.forEach((market) => {
       TVL += Number(market.totalSupplyUsd);
     });
     const tvlHeader = $(".annex-platform-tvl-header");
     const tvl = $(".annex-platform-tvl");
+    var NTVL = +TVL + +farmTVL 
     tvlHeader.html(
       `TVL ${new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
-      }).format(TVL / 1000000)}M`
+      }).format(NTVL / 1000000)}M`
     );
     tvl.html(
       `TVL ${new Intl.NumberFormat("en-US", {
@@ -400,6 +401,7 @@ $(function () {
 
   const request = $.ajax({
     url: `${apiBaseURL}/v1/governance/annex`,
+    header: "Access-Control-Allow-Origin: *"
   });
 
   initialRows("saving");
@@ -407,8 +409,9 @@ $(function () {
 
   request.done(function (response) {
     markets = response?.data?.markets;
+    farmTVL = response?.data?.farmTVL;
 
-    updateTVL(markets);
+    updateTVL(markets,farmTVL);
     updateSaving(markets);
 
     updateBorrowing(markets);
