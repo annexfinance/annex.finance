@@ -90,27 +90,24 @@ function getSavingRow(row, annAPY) {
     <div class="col-12 col-md-6 col-xl-4">
         <div class="curency-crd-main" id="saving-${row?.underlyingSymbol?.toLowerCase()}">
             <div class="curecy-crd-img-main">
-                <img src="images/tokens/${row?.underlyingSymbol?.toUpperCase()}.png" alt="${
-    row?.underlyingSymbol
-  }" style="width: 70px; height: 70px" />
+                <img src="images/tokens/${row?.underlyingSymbol?.toUpperCase()}.png" alt="${row?.underlyingSymbol
+    }" style="width: 70px; height: 70px" />
             </div>
             <div class="d-flex align-items-center flex-row justify-content-between flex-grow-1 flex-wrap">
               <div class="curecy-crd-token-info mb-0 flex-grow-1 flex-wrap text-wrap">
                   <p class="curcy-name text-left mb-1 mg-sm-2">${row?.underlyingName?.replace(
-                    "Token",
-                    ""
-                  )}</p>
-                  <p class="currency-p curcy-abbr text-left mb-0">${
-                    row?.underlyingSymbol
-                  }</p>
+      "Token",
+      ""
+    )}</p>
+                  <p class="currency-p curcy-abbr text-left mb-0">${row?.underlyingSymbol
+    }</p>
               </div>
   
               <div class="currecy-crd-value text-md-right text-left">
-                  <p class="curcy-percent2">${
-                    annAPY
-                      ? `${Number(row?.supplyAnnexApy)?.toFixed(2)}%`
-                      : `${Number(row?.supplyApy)?.toFixed(2)}%`
-                  }</p>
+                  <p class="curcy-percent2">${annAPY
+      ? `${Number(row?.supplyAnnexApy)?.toFixed(2)}%`
+      : `${Number(row?.supplyApy)?.toFixed(2)}%`
+    }</p>
                   <p class="currency-p curcy-name-rt2">APY</p>
               </div>
             </div>
@@ -125,28 +122,26 @@ function getBorrowRow(row) {
     <div class="col-12 col-md-6 col-xl-4">
         <div class="curency-crd-main" id="borrow-${row?.underlyingSymbol?.toLowerCase()}">
             <div class="curecy-crd-img-main">
-                <img src="images/tokens/${row?.underlyingSymbol?.toUpperCase()}.png" alt="${
-    row?.underlyingSymbol
-  }" style="width: 70px; height: 70px" />
+                <img src="images/tokens/${row?.underlyingSymbol?.toUpperCase()}.png" alt="${row?.underlyingSymbol
+    }" style="width: 70px; height: 70px" />
             </div>
             
             <div class="d-flex align-items-stretch align-items-lg-center flex-column flex-lg-row justify-content-between flex-grow-1">
               <div class="curecy-crd-img-main">
                   <div class="curecy-crd-token-info mb-2 mb-lg-0">
                       <p class="curcy-name text-left">${row?.underlyingName?.replace(
-                        "Token",
-                        ""
-                      )}</p>
-                      <p class="currency-p curcy-abbr text-left mb-0">${
-                        row?.underlyingSymbol
-                      }</p>
+      "Token",
+      ""
+    )}</p>
+                      <p class="currency-p curcy-abbr text-left mb-0">${row?.underlyingSymbol
+    }</p>
                   </div>
               </div>
   
               <div class="currecy-crd-value text-lg-right text-left">
                   <p class="curcy-percent">${liquidityFormatter.format(
-                    row?.liquidity
-                  )}</p>
+      row?.liquidity
+    )}</p>
                   <p class="currency-p curcy-name-rt">Available Liquidity</p>
               </div>
             </div>
@@ -157,9 +152,8 @@ function getBorrowRow(row) {
 
 function getStringTheory(rotate = false) {
   return $(`
-  <div class="col-12 col-md-6 col-xl-4 ${
-    rotate ? "rotate" : ""
-  } d-none d-xl-block">
+  <div class="col-12 col-md-6 col-xl-4 ${rotate ? "rotate" : ""
+    } d-none d-xl-block">
       <img src="./images/string-theory.svg" class="string-theory" alt="">
   </div>
 `);
@@ -167,9 +161,8 @@ function getStringTheory(rotate = false) {
 
 function getMarketTokenOption(row) {
   return $(`
-    <option data-image="images/tokens/${row?.underlyingSymbol?.toUpperCase()}.png" value="${
-    row?.underlyingSymbol
-  }">${row?.underlyingSymbol}</option>
+    <option data-image="images/tokens/${row?.underlyingSymbol?.toUpperCase()}.png" value="${row?.underlyingSymbol
+    }">${row?.underlyingSymbol}</option>
   `);
 }
 
@@ -219,6 +212,13 @@ const defaultCoins = {
   BTCB: {
     underlyingSymbol: "BTCB",
     underlyingName: "BTCB",
+    supplyAnnexApy: 0,
+    supplyApy: 0,
+    liquidity: 0,
+  },
+  TRX: {
+    underlyingSymbol: "TRX",
+    underlyingName: "TRX",
     supplyAnnexApy: 0,
     supplyApy: 0,
     liquidity: 0,
@@ -292,14 +292,14 @@ $(function () {
     container.append(...rows);
   }
 
-  function updateTVL(markets,farmTVL) {
+  function updateTVL(markets, farmTVL) {
     let TVL = 0;
     markets.forEach((market) => {
       TVL += Number(market.totalSupplyUsd);
     });
     const tvlHeader = $(".annex-platform-tvl-header");
     const tvl = $(".annex-platform-tvl");
-    var NTVL = +TVL + +farmTVL 
+    var NTVL = +TVL + +farmTVL
     tvlHeader.html(
       `TVL ${new Intl.NumberFormat("en-US", {
         style: "currency",
@@ -392,8 +392,8 @@ $(function () {
     marketBorrowers.html(selectedMarket?.borrowerCount);
     marketTokenAddress.html(
       selectedMarket?.address?.slice(0, 6) +
-        "..." +
-        selectedMarket?.address?.slice(-4)
+      "..." +
+      selectedMarket?.address?.slice(-4)
     );
     marketTokenAddress.attr("href", getBscScanUrl(selectedMarket?.address));
     marketTokenAddress.attr("target", "_blank");
@@ -411,7 +411,7 @@ $(function () {
     markets = response?.data?.markets;
     farmTVL = response?.data?.farmTVL;
 
-    updateTVL(markets,farmTVL);
+    updateTVL(markets, farmTVL);
     updateSaving(markets);
 
     updateBorrowing(markets);
