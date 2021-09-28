@@ -223,20 +223,6 @@ const defaultCoins = {
     supplyApy: 0,
     liquidity: 0,
   },
-  DOT: {
-    underlyingSymbol: "DOT",
-    underlyingName: "DOT",
-    supplyAnnexApy: 0,
-    supplyApy: 0,
-    liquidity: 0,
-  },
-  ADA: {
-    underlyingSymbol: "ADA",
-    underlyingName: "ADA",
-    supplyAnnexApy: 0,
-    supplyApy: 0,
-    liquidity: 0,
-  },
 };
 
 const defaultCoinKeys = Object.keys(defaultCoins);
