@@ -85,6 +85,9 @@ const liquidityFormatter = new Intl.NumberFormat("en-US", {
 });
 
 function getSavingRow(row, annAPY) {
+
+  let sumNum = Number(Number(row?.supplyAnnexApy)?.toFixed(2)) + Number(Number(row?.supplyApy)?.toFixed(2))
+
   return $(`
  
     <div class="col-12 col-md-6 col-xl-4">
@@ -104,10 +107,12 @@ function getSavingRow(row, annAPY) {
               </div>
   
               <div class="currecy-crd-value text-md-right text-left">
-                  <p class="curcy-percent2">${annAPY
-      ? `${Number(row?.supplyAnnexApy)?.toFixed(2)}%`
-      : `${Number(row?.supplyApy)?.toFixed(2)}%`
-    }</p>
+                  <p class="curcy-percent2">
+                  ${annAPY
+                    ? `${sumNum?.toFixed(2)}%`
+                    : `${Number(row?.supplyApy)?.toFixed(2)}%`
+                  }
+                  </p>
                   <p class="currency-p curcy-name-rt2">APY</p>
               </div>
             </div>
