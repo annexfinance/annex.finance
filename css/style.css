@@ -11787,7 +11787,7 @@ a:hover {
   align-items: center;
 }
 .nav-bar .nav-bar-nav li {
-  padding: 12px 15px;
+  padding: 12px 12px;
 }
 @media (min-width: 1200px) {
   .nav-bar .nav-bar-nav li:last-child {
