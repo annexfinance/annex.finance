@@ -11787,7 +11787,7 @@ a:hover {
   align-items: center;
 }
 .nav-bar .nav-bar-nav li {
-  padding: 12px 12px;
+  padding: 8px 8px;
 }
 @media (min-width: 1200px) {
   .nav-bar .nav-bar-nav li:last-child {
@@ -11836,9 +11836,9 @@ button.toggle-nav {
 
 .nav-btn {
   background: #fff;
-  padding: 15px 20px;
+  padding: 10px 10px;
   color: #2a304b !important;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .naurillon-brand img {
@@ -13304,6 +13304,17 @@ about
         #8f3f88 100%
       )
       border-box;
+  font-size: 18px;
+  padding: 0.8rem 1.4rem;
+}
+
+@media screen and (max-width: 767px) {
+  .banner-outer .btn-outline-gradient {
+    font-size: 18px;
+    padding: 0.8rem 1.4rem;
+    margin: 20px 0;
+    width: 80%;
+  }
 }
 
 .protocol-outer .btn-outline-gradient {
