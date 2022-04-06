@@ -1,4 +1,5 @@
 const apiBaseURL = "https://api.annex.finance/api";
+const apiCronosURL = "https://cronosapi.annex.finance/api";
 
 $(document).ready(function () {
   $(window).scroll(function () {
@@ -109,9 +110,9 @@ function getSavingRow(row, annAPY) {
               <div class="currecy-crd-value text-md-right text-left">
                   <p class="curcy-percent2">
                   ${annAPY
-                    ? `${sumNum?.toFixed(2)}%`
-                    : `${Number(row?.supplyApy)?.toFixed(2)}%`
-                  }
+      ? `${sumNum?.toFixed(2)}%`
+      : `${Number(row?.supplyApy)?.toFixed(2)}%`
+    }
                   </p>
                   <p class="currency-p curcy-name-rt2">APY</p>
               </div>
@@ -297,14 +298,18 @@ $(function () {
     container.append(...rows);
   }
 
-  function updateTVL(markets, farmTVL) {
+  function updateTVL(data) {
+    let { bscData, cronosData } = data
     let TVL = 0;
-    markets.forEach((market) => {
+    bscData.markets.forEach((market) => {
+      TVL += Number(market.totalSupplyUsd);
+    });
+    cronosData.markets.forEach((market) => {
       TVL += Number(market.totalSupplyUsd);
     });
     const tvlHeader = $(".annex-platform-tvl-header");
     const tvl = $(".annex-platform-tvl");
-    var NTVL = +TVL + +farmTVL
+    var NTVL = +TVL + +bscData.farmTVL + +cronosData.farmTVL
     tvlHeader.html(
       `TVL ${new Intl.NumberFormat("en-US", {
         style: "currency",
@@ -416,7 +421,16 @@ $(function () {
     markets = response?.data?.markets;
     farmTVL = response?.data?.farmTVL;
 
-    updateTVL(markets, farmTVL);
+    const requestCronos = $.ajax({
+      url: `${apiCronosURL}/v1/governance/annex`,
+      header: "Access-Control-Allow-Origin: *"
+    });
+    
+    requestCronos.done(function (responseCronos) {
+      cronosData = responseCronos?.data
+      updateTVL({ bscData: { markets: markets, farmTVL: farmTVL }, cronosData: cronosData });
+    })
+
     updateSaving(markets);
 
     updateBorrowing(markets);
