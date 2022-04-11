@@ -299,28 +299,21 @@ $(function () {
   }
 
   function updateTVL(data) {
-    let { bscData, cronosData } = data
     let TVL = 0;
-    bscData.markets.forEach((market) => {
-      TVL += Number(market.totalSupplyUsd);
-    });
-    cronosData.markets.forEach((market) => {
-      TVL += Number(market.totalSupplyUsd);
-    });
+    TVL = Number(data.totalLiquidity) + Number(data.otherChainLiquidity)
     const tvlHeader = $(".annex-platform-tvl-header");
     const tvl = $(".annex-platform-tvl");
-    var NTVL = +TVL + +bscData.farmTVL + +cronosData.farmTVL
     tvlHeader.html(
       `TVL ${new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
-      }).format(NTVL / 1000000)}M`
+      }).format(TVL / 1000000)}M`
     );
     tvl.html(
       `TVL ${new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
-      }).format(NTVL)}`
+      }).format(TVL)}`
     );
   }
 
@@ -421,15 +414,8 @@ $(function () {
     markets = response?.data?.markets;
     farmTVL = response?.data?.farmTVL;
 
-    const requestCronos = $.ajax({
-      url: `${apiCronosURL}/v1/governance/annex`,
-      header: "Access-Control-Allow-Origin: *"
-    });
-    
-    requestCronos.done(function (responseCronos) {
-      cronosData = responseCronos?.data
-      updateTVL({ bscData: { markets: markets, farmTVL: farmTVL }, cronosData: cronosData });
-    })
+
+      updateTVL(response?.data);
 
     updateSaving(markets);
 
